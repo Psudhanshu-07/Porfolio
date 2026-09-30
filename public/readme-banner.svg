@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="title description">
+  <title id="title">Sudhanshu Pandey — Build. Solve. Deploy.</title>
+  <desc id="description">A neo-brutalist portfolio banner in blue, yellow, purple, pink, and green with a bold black outline and offset shadow.</desc>
+  <rect width="1200" height="300" fill="#6fa7e8" />
+  <path d="M1090 48l8 18 18 8-18 8-8 18-8-18-18-8 18-8z" fill="#efa0aa" stroke="#111111" stroke-width="3" />
+  <path d="M1128 182l5 11 11 5-11 5-5 11-5-11-11-5 11-5z" fill="#65d58a" stroke="#111111" stroke-width="3" />
+  <rect x="58" y="58" width="1088" height="194" rx="28" fill="#111111" />
+  <rect x="40" y="38" width="1088" height="194" rx="28" fill="#f7d35a" stroke="#111111" stroke-width="7" />
+  <text x="84" y="112" fill="#111111" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" font-style="italic">Sudhanshu Pandey</text>
+  <text x="87" y="145" fill="#111111" font-family="monospace" font-size="16" font-weight="700" letter-spacing="2">BUILD. SOLVE. DEPLOY.</text>
+  <g font-family="monospace" font-size="14" font-weight="700" text-anchor="middle">
+    <rect x="84" y="169" width="223" height="38" rx="13" fill="#a58be8" stroke="#111111" stroke-width="3" />
+    <text x="195" y="194" fill="#111111">SOFTWARE ENGINEER</text>
+    <rect x="323" y="169" width="135" height="38" rx="13" fill="#efa0aa" stroke="#111111" stroke-width="3" />
+    <text x="390" y="194" fill="#111111">AI BUILDER</text>
+    <rect x="474" y="169" width="196" height="38" rx="13" fill="#65d58a" stroke="#111111" stroke-width="3" />
+    <text x="572" y="194" fill="#111111">CLOUD + DEVOPS</text>
+  </g>
+</svg>
