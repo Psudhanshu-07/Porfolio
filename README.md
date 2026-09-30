@@ -1,6 +1,4 @@
 <div align="center">
-  <img src="https://github.com/Psudhanshu-07/Porfolio/blob/main/public/profile-photo.jpeg?raw=true" alt="Portrait of Sudhanshu Pandey" width="144" />
-  <br />
   <img src="https://github.com/Psudhanshu-07/Porfolio/blob/main/public/readme-banner.svg?raw=true" alt="Sudhanshu Pandey — Build. Solve. Deploy." width="100%" />
   <p>Building useful products, learning in public, and bringing more students into technology.</p>
   <p>
