@@ -198,10 +198,10 @@ body {
   border-radius: 6px;
 }
 
-/* ---------- Batman cursor set ---------- */
+/* ---------- Animated sword cursor ---------- */
 @media (hover: hover) and (pointer: fine) {
   body {
-    cursor: url("/batman-batarang.cur"), auto;
+    cursor: url("/minecraft-enchanted-diamond-sword.ani"), auto;
   }
 
   a[href],
@@ -213,7 +213,7 @@ body {
   label[for],
   select,
   summary {
-    cursor: url("/batman-pointer.cur"), pointer;
+    cursor: url("/minecraft-enchanted-diamond-sword.ani"), pointer;
   }
 
   input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]),
