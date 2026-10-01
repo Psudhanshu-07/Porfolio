@@ -1,14 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { profile } from "@/data/profile";
 
 const LINKS = [
-  { href: "#experience", label: "EXPERIENCE" },
-  { href: "#projects", label: "PROJECTS" },
-  { href: "#skills", label: "SKILLS" },
-  { href: "#blog", label: "BLOG" },
-  { href: "#contact", label: "CONTACT" },
+  { href: "/#experience", id: "experience", label: "EXPERIENCE" },
+  { href: "/#projects", id: "projects", label: "PROJECTS" },
+  { href: "/#skills", id: "skills", label: "SKILLS" },
+  { href: "/#blog", id: "blog", label: "BLOG" },
+  { href: "/#contact", id: "contact", label: "CONTACT" },
 ] as const;
 
 function useClock() {
@@ -51,11 +52,11 @@ export default function Navbar() {
 
   // Scroll-spy via IntersectionObserver
   useEffect(() => {
-    const ids = LINKS.map((l) => l.href.slice(1));
+    const ids = LINKS.map((l) => l.id);
     const observer = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
-          if (e.isIntersecting) setActive(`#${e.target.id}`);
+          if (e.isIntersecting) setActive(`/#${e.target.id}`);
         }
       },
       { rootMargin: "-30% 0px -55% 0px" }
@@ -75,12 +76,12 @@ export default function Navbar() {
           scrolled ? "py-2 shadow-hard-sm" : "py-3 shadow-hard"
         }`}
       >
-        <a
-          href="#top"
+        <Link
+          href="/"
           className="whitespace-nowrap font-serif text-xl font-black italic tracking-tight text-ink hover:opacity-80 sm:text-2xl"
         >
           PORTFOLIO <span className="hidden 2xl:inline">/ SUDHANSHU</span>
-        </a>
+        </Link>
 
         <ul className="ml-auto hidden items-center gap-2 lg:flex">
           {LINKS.map((l) => (

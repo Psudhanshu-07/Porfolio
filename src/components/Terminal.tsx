@@ -21,6 +21,8 @@ const HELP = [
 function buildResponse(cmd: string): Line[] {
   const c = cmd.trim().toLowerCase();
   switch (c) {
+    case "help":
+      return HELP.map((h) => ({ text: h, kind: "out" as const }));
     case "whoami":
       return [
         { text: profile.name.display, kind: "out" },
