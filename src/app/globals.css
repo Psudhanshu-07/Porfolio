@@ -199,32 +199,43 @@ body {
 }
 
 /* ---------- Animated sword cursor ---------- */
-@media (hover: hover) and (pointer: fine) {
-  body {
-    cursor: url("/minecraft-enchanted-diamond-sword.ani"), auto;
+.animated-sword-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 48px;
+  height: 48px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.animated-sword-cursor.is-visible {
+  visibility: visible;
+}
+
+.animated-sword-cursor img {
+  display: block;
+  width: 48px;
+  height: 48px;
+  max-width: none;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  body.has-animated-sword-cursor,
+  body.has-animated-sword-cursor * {
+    cursor: none !important;
   }
 
-  a[href],
-  button:not(:disabled),
-  [role="button"],
-  input[type="button"],
-  input[type="submit"],
-  input[type="reset"],
-  label[for],
-  select,
-  summary {
-    cursor: url("/minecraft-enchanted-diamond-sword.ani"), pointer;
+  body.has-animated-sword-cursor input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]),
+  body.has-animated-sword-cursor textarea,
+  body.has-animated-sword-cursor [contenteditable="true"] {
+    cursor: text !important;
   }
 
-  input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]),
-  textarea,
-  [contenteditable="true"] {
-    cursor: text;
-  }
-
-  :disabled,
-  [aria-disabled="true"] {
-    cursor: not-allowed;
+  body.has-animated-sword-cursor :disabled,
+  body.has-animated-sword-cursor [aria-disabled="true"] {
+    cursor: not-allowed !important;
   }
 }
 
