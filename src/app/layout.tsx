@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Playfair_Display, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
-import CustomCursor from "@/components/CustomCursor";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -75,7 +74,6 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} ${playfair.variable} ${plexMono.variable}`}
       >
         {children}
-        <CustomCursor />
       </body>
     </html>
   );

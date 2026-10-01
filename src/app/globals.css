@@ -198,54 +198,33 @@ body {
   border-radius: 6px;
 }
 
-/* ---------- Batwing pointer ---------- */
-.portfolio-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10000;
-  width: 48px;
-  height: 42px;
-  opacity: 0;
-  pointer-events: none;
-  transform-origin: center;
-  filter: drop-shadow(0 3px 2px rgb(0 0 0 / 35%));
-  transition: opacity 140ms ease, scale 160ms ease;
-}
-
-.portfolio-cursor.is-visible {
-  opacity: 1;
-}
-
-.portfolio-cursor.is-interactive {
-  scale: 1.16;
-}
-
-.portfolio-cursor.is-interactive .portfolio-cursor-shape {
-  fill: var(--yellow-deep);
-  stroke: var(--ink);
-}
-
-.portfolio-cursor.is-pressed {
-  scale: 0.82;
-}
-
-.portfolio-cursor svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  body.has-custom-cursor,
-  body.has-custom-cursor * {
-    cursor: none !important;
+/* ---------- Batman cursor set ---------- */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: url("/batman-batarang.cur"), auto;
   }
 
-  body.has-custom-cursor input,
-  body.has-custom-cursor textarea,
-  body.has-custom-cursor [contenteditable="true"] {
-    cursor: text !important;
+  a[href],
+  button:not(:disabled),
+  [role="button"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  label[for],
+  select,
+  summary {
+    cursor: url("/batman-pointer.cur"), pointer;
+  }
+
+  input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]),
+  textarea,
+  [contenteditable="true"] {
+    cursor: text;
+  }
+
+  :disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
   }
 }
 
