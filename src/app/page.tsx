@@ -331,6 +331,7 @@ export default function Home() {
             <div className="grid gap-5 md:grid-cols-3">
               {blogPosts.map((post) => {
                 const readable = !post.draft && !!post.content;
+                const destination = post.externalUrl || `/blog/${post.slug}`;
                 const Card = (
                   <article
                     className={`nb-card h-full ${COLORS[post.color]} p-6 transition-transform duration-200 ${readable ? "group-hover:-translate-y-1.5" : ""}`}
@@ -354,7 +355,11 @@ export default function Home() {
                     <p className="mt-3 leading-relaxed">{post.excerpt}</p>
                     <p className="font-mono-ui mt-5 border-t-2 border-ink/15 pt-3 text-xs text-ink/60">
                       {post.date} ·{" "}
-                      {readable ? (
+                      {post.externalUrl ? (
+                        <span className="font-bold text-ink group-hover:underline">
+                          READ_ON_MEDIUM →
+                        </span>
+                      ) : readable ? (
                         <span className="font-bold text-ink group-hover:underline">
                           READ_FULL_POST →
                         </span>
@@ -366,8 +371,13 @@ export default function Home() {
                 );
                 return (
                   <Reveal key={post.slug}>
-                    {readable ? (
-                      <Link href={`/blog/${post.slug}`} className="group block">
+                    {post.externalUrl || readable ? (
+                      <Link
+                        href={destination}
+                        target={post.externalUrl ? "_blank" : undefined}
+                        rel={post.externalUrl ? "noopener noreferrer" : undefined}
+                        className="group block"
+                      >
                         {Card}
                       </Link>
                     ) : (

@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sudhanshu.dev";
 
   const posts: MetadataRoute.Sitemap = blogPosts
-    .filter((p) => !p.draft && p.content)
+    .filter((p) => !p.draft && p.content && !p.externalUrl)
     .map((p) => ({
       url: `${baseUrl}/blog/${p.slug}`,
       lastModified: new Date(p.date),

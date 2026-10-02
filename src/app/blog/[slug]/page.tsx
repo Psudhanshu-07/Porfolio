@@ -15,7 +15,7 @@ const BG: Record<string, string> = {
 
 export function generateStaticParams() {
   return blogPosts
-    .filter((p) => !p.draft && p.content)
+    .filter((p) => !p.draft && p.content && !p.externalUrl)
     .map((p) => ({ slug: p.slug }));
 }
 
@@ -52,7 +52,7 @@ export default async function BlogPostPage({
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
 
-  if (!post || post.draft || !post.content) notFound();
+  if (!post || post.draft || !post.content || post.externalUrl) notFound();
 
   const others = blogPosts.filter((p) => p.slug !== slug && !p.draft).slice(0, 2);
 
