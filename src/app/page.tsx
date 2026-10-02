@@ -356,9 +356,7 @@ export default function Home() {
                     <p className="font-mono-ui mt-5 border-t-2 border-ink/15 pt-3 text-xs text-ink/60">
                       {post.date} ·{" "}
                       {post.externalUrl ? (
-                        <span className="font-bold text-ink group-hover:underline">
-                          READ_ON_MEDIUM →
-                        </span>
+                        "EXTERNAL ARTICLE"
                       ) : readable ? (
                         <span className="font-bold text-ink group-hover:underline">
                           READ_FULL_POST →
@@ -367,6 +365,12 @@ export default function Home() {
                         <span className="font-bold text-ink/70">DRAFT — COMING SOON</span>
                       )}
                     </p>
+                    {post.externalUrl && (
+                      <span className="nb-btn mt-4 w-full justify-between bg-yellow text-sm group-hover:bg-pink">
+                        <span className="font-mono-ui tracking-wide">OPEN MEDIUM ARTICLE</span>
+                        <span aria-hidden className="text-xl leading-none">↗</span>
+                      </span>
+                    )}
                   </article>
                 );
                 return (
